@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aryan | Web Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f7fbff;
+      --card: #ffffff;
+      --accent: #ff6b81;
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.7);
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f7fbff 0%, #ffffff 100%);color:#0f172a}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1000px;margin:40px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#5eead4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .nav{display:flex;gap:12px;align-items:center}
+    .btn{padding:10px 14px;border-radius:10px;background:var(--accent);color:white;font-weight:600;border:none;cursor:pointer}
+    .ghost{padding:8px 12px;border-radius:10px;border:1px solid #e6e9ef;background:transparent}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:36px;align-items:center}
+    .hero-left h1{font-size:28px;margin:0 0 8px}
+    .tag{color:var(--muted);margin-bottom:16px}
+    .cta{display:flex;gap:12px}
+
+    .card{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(12,22,48,0.06)}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
+    .project{border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+    .project img{width:100%;height:150px;object-fit:cover}
+    .project .p-body{padding:12px}
+    .p-footer{display:flex;justify-content:space-between;align-items:center;padding:12px;border-top:1px solid #f1f5f9}
+
+    .about{display:flex;gap:16px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,#06b6d4,#60a5fa);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:26px}
+
+    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:14px;padding:18px}
+
+    /* Contact Form */
+    form{display:grid;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:transparent}
+    textarea{min-height:110px;resize:vertical}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .hero-right{order: -1}
+      .logo{width:48px;height:48px}
+    }
+
+    /* tiny helpers */
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <div style="font-weight:700">Aryan</div>
+          <div class="small muted">Web Designer • Frontend</div>
+        </div>
+      </div>
+      <nav class="nav small">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="ghost">Contact</a>
+        <button class="btn" onclick="openIG()">DM on Instagram</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="card">
+          <h1>Hi, I’m <span style="color:var(--accent)">Aryan</span> — I build simple, fast websites for small businesses</h1>
+          <p class="tag">I craft clean, responsive websites using HTML, CSS, and a touch of JavaScript — no backend needed. I connect forms, payment links, and everything you need to go live effortlessly.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Hire Me</a>
+            <a class="ghost" href="#projects">View Work</a>
+          </div>
+        </div>
+
+        <div id="projects" style="margin-top:18px">
+          <h3 style="margin:0 0 8px">Selected Projects</h3>
+          <div class="projects">
+            <!-- Project 1 -->
+            <article class="project card">
+              <img src="marathon.png" alt="marathon site">
+              <div class="p-body">
+                <strong>Endurance Marathon Website</strong>
+                <p class="small muted">Full event landing page featuring category cards, sponsor section & call-to-action for registration.</p>
+              </div>
+              <div class="p-footer">
+                <a class="small" href="https://690c2eb7d3d661f1aaabbaca--dancing-croquembouche-773fcb.netlify.app/" target="_blank">Live Demo</a>
+                <span class="small muted">Starting Price: $5</span>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project card">
+              <img src="ipl.png" alt="Portfolio">
+              <div class="p-body">
+                <strong>IPL 2025 Team Showcase Website</strong>
+                <p class="small muted">Built a colorful, responsive multi-page sports website featuring all IPL teams with smooth UI & Bootstrap design.</p>
+              </div>
+              <div class="p-footer">
+                <a class="small" href="#" onclick="openDemo(event,'https://example.com')">Live Demo</a>
+                <span class="small muted">Starting Price: $2</span>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project card">
+              <img src="https://images.unsplash.com/photo-1495697112643-4c7b5b2a8d97?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi" alt="Shop">
+              <div class="p-body">
+                <strong>Small Shop Landing</strong>
+                <p class="small muted">Product list & contact</p>
+              </div>
+              <div class="p-footer">
+                <a class="small" href="#" onclick="openDemo(event,'https://example.com')">Live Demo</a>
+                <span class="small muted">Price: ₹1,200</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+
+    <aside class="hero-right card" style="width:100%;max-width:420px" id="contact">
+  <h3 style="margin-top:0">Let's Work Together 🤝</h3>
+  <p class="small muted">Have an idea? Tell me about it below or reach out directly.</p>
+
+  <!-- ✅ Formspree contact form -->
+  <form action="https://formspree.io/f/xwpwgqqy" method="POST" id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <input type="text" name="subject" placeholder="Project Type (e.g. Portfolio, Restaurant Site)" required>
+    <textarea name="message" placeholder="Tell me a bit about your project goals..." required></textarea>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between">
+      <button class="btn" type="submit">Send Message</button>
+      <button class="ghost" type="button" onclick="openWhats()">💬 WhatsApp</button>
+      <button class="ghost" type="button" onclick="openIG()">📸 Instagram</button>
+    </div>
+  </form>
+
+  <div style="margin-top:16px;padding:14px;background:rgba(255,107,129,0.05);border-radius:10px;">
+    <div class="small muted">💡 Tip:</div>
+    <p class="small" style="margin:6px 0 0;">You can describe your idea briefly — I’ll share design options, time, and price within a few hours!</p>
+  </div>
+
+  <hr style="margin:18px 0;border:none;border-top:1px solid #f1f5f9">
+</aside>
+
+
+
+    </section>
+
+    <section id="about" style="margin-top:26px" class="card about">
+      <div class="avatar">A</div>
+      <div>
+        <h3 style="margin:0 0 6px">About Me</h3>
+        <p class="muted small">I design smooth, mobile-friendly websites using HTML, CSS & minimal JS. No backend fuss — I set up forms and payment links so your site’s ready to shine!</p>
+        <p style="margin-top:8px"><strong>Skills:</strong> HTML · CSS · JavaScript · Formspree · Responsive design</p>
+      </div>
+    </section>
+
+    <footer>
+      Built with ❤️ by Aryan — Want this design? DM me "Website" on Instagram
+    </footer>
+  </div>
+
+  <script>
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const res = await fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  if (res.ok) {
+    alert("✅ Message sent! I'll reply soon.");
+    form.reset();
+  } else {
+    alert("⚠️ Something went wrong. Try again!");
+  }
+});
+</script>
+
+
+  <a href="https://wa.me/916290363938?text=Hi%20Aryan%2C%20I%20want%20a%20website" 
+   target="_blank" 
+   style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;
+          padding:12px 16px;border-radius:50%;font-size:22px;text-align:center;
+          box-shadow:0 4px 10px rgba(0,0,0,0.2);text-decoration:none;">
+  💬
+</a>
+
+</body>
+</html>
